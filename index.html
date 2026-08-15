@@ -51,7 +51,7 @@
         <div class="absolute inset-0 opacity-30 block-pattern z-0"></div>
         
         <!-- Start Button for Audio Context -->
-        <button id="start-intro-btn" class="mc-btn-play font-pixel text-2xl px-10 py-5 bg-mc-grass text-white z-20 shadow-[0_0_20px_rgba(91,156,48,0.6)] hover:scale-105 transition-transform animate-bounce">
+        <button id="start-intro-btn" class="mc-btn-play font-pixel text-base sm:text-2xl px-6 sm:px-10 py-4 sm:py-5 bg-mc-grass text-white z-20 shadow-[0_0_20px_rgba(91,156,48,0.6)] hover:scale-105 transition-transform animate-bounce">
             [ START GAME ]
         </button>
         
@@ -72,64 +72,82 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-sm border-b-4 border-mc-stone px-6 py-4 flex justify-between items-center mc-nav">
-        <div class="font-pixel text-mc-grass text-sm md:text-base text-shadow">Hackcraft</div>
+    <nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-sm border-b-4 border-mc-stone px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center mc-nav">
+        <div class="font-pixel text-mc-grass text-xs sm:text-sm md:text-base text-shadow">Hackcraft</div>
         <div class="hidden md:flex gap-6 font-pixel text-xs">
             <a href="#about" class="hover:text-mc-grass transition-colors text-shadow">About</a>
             <a href="#timeline" class="hover:text-mc-grass transition-colors text-shadow">Timeline</a>
             <a href="#sponsors" class="hover:text-mc-grass transition-colors text-shadow">Sponsors</a>
             <a href="#faq" class="hover:text-mc-grass transition-colors text-shadow">FAQ</a>
         </div>
-        <a href="#register" class="mc-btn font-pixel text-xs px-4 py-2 bg-mc-grass text-white">Register</a>
+        <div class="flex items-center gap-3">
+            <a href="#register" class="mc-btn font-pixel text-[10px] sm:text-xs px-3 sm:px-4 py-2 bg-mc-grass text-white hidden sm:inline-block">Register</a>
+            <!-- Hamburger Button (mobile only) -->
+            <button id="hamburger-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] focus:outline-none" aria-label="Toggle menu">
+                <span class="hamburger-line block w-6 h-[3px] bg-white transition-all duration-300"></span>
+                <span class="hamburger-line block w-6 h-[3px] bg-white transition-all duration-300"></span>
+                <span class="hamburger-line block w-6 h-[3px] bg-white transition-all duration-300"></span>
+            </button>
+        </div>
     </nav>
 
+    <!-- Mobile Nav Overlay -->
+    <div id="mobile-nav" class="fixed inset-0 z-[60] bg-black/90 backdrop-blur-md flex flex-col items-center justify-center gap-8 transform translate-x-full transition-transform duration-300 md:hidden">
+        <button id="mobile-nav-close" class="absolute top-4 right-4 font-pixel text-white text-2xl w-12 h-12 flex items-center justify-center mc-btn bg-red-700 hover:bg-red-600" aria-label="Close menu">✕</button>
+        <a href="#about" class="mobile-nav-link font-pixel text-xl text-white hover:text-mc-grass transition-colors text-shadow">About</a>
+        <a href="#timeline" class="mobile-nav-link font-pixel text-xl text-white hover:text-mc-grass transition-colors text-shadow">Timeline</a>
+        <a href="#sponsors" class="mobile-nav-link font-pixel text-xl text-white hover:text-mc-grass transition-colors text-shadow">Sponsors</a>
+        <a href="#faq" class="mobile-nav-link font-pixel text-xl text-white hover:text-mc-grass transition-colors text-shadow">FAQ</a>
+        <a href="#register" class="mc-btn-play font-pixel text-lg px-8 py-4 bg-mc-grass text-white mt-4">Register</a>
+    </div>
+
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen relative flex flex-col items-center justify-center pt-20 pb-32 z-10 px-4">
+    <section id="hero" class="min-h-screen relative flex flex-col items-center justify-center pt-16 sm:pt-20 pb-24 sm:pb-32 z-10 px-4">
         <!-- Voxel Terrain Background (CSS Generated) -->
-        <div class="absolute bottom-0 w-full h-48 bg-mc-dirt border-t-8 border-mc-grass block-pattern z-[-1]"></div>
+        <div class="absolute bottom-0 w-full h-32 sm:h-48 bg-mc-dirt border-t-8 border-mc-grass block-pattern z-[-1]"></div>
         
         <div class="text-center max-w-4xl mx-auto floating-block">
-            <h1 class="mc-logo text-center mb-6 leading-tight tracking-widest relative inline-block">
-                <span class="block text-4xl md:text-6xl lg:text-7xl">HACKCRAFT</span>
-                <span class="block font-pixel-body font-bold text-3xl md:text-4xl mt-2 text-white text-shadow-md">2026</span>
+            <h1 class="mc-logo text-center mb-4 sm:mb-6 leading-tight tracking-widest relative inline-block">
+                <span class="block text-3xl sm:text-4xl md:text-6xl lg:text-7xl">HACKCRAFT</span>
+                <span class="block font-pixel-body font-bold text-2xl sm:text-3xl md:text-4xl mt-2 text-white text-shadow-md">2026</span>
             </h1>
-            <div class="mc-panel p-6 inline-block mb-8 rotate-1">
-                <p class="font-pixel-body text-2xl md:text-3xl text-gray-800 font-bold">Theme: <span class="text-mc-wood">Minecraft</span></p>
-                <p class="font-pixel-body text-xl md:text-2xl text-gray-700 mt-2">October 12–13, 2026 | 24 Hours</p>
+            <div class="mc-panel p-4 sm:p-6 inline-block mb-6 sm:mb-8 rotate-1">
+                <p class="font-pixel-body text-xl sm:text-2xl md:text-3xl text-gray-800 font-bold">Theme: <span class="text-mc-wood">Minecraft</span></p>
+                <p class="font-pixel-body text-lg sm:text-xl md:text-2xl text-gray-700 mt-1 sm:mt-2">October 12–13, 2026 | 24 Hours</p>
             </div>
             
-            <div class="text-2xl md:text-3xl font-pixel text-yellow-300 text-shadow-md mb-10 animate-pulse">
+            <div class="text-lg sm:text-2xl md:text-3xl font-pixel text-yellow-300 text-shadow-md mb-6 sm:mb-10 animate-pulse">
                 🏆 ₹1,00,000+ in rewards
             </div>
             
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="#register" class="mc-btn-play font-pixel text-xl px-10 py-5 bg-mc-grass text-white inline-block">
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+                <a href="#register" class="mc-btn-play font-pixel text-base sm:text-xl px-8 sm:px-10 py-4 sm:py-5 bg-mc-grass text-white inline-block">
                     > PLAY NOW
                 </a>
             </div>
         </div>
         
         <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div class="w-8 h-8 border-r-4 border-b-4 border-white rotate-45"></div>
+        <div class="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-6 sm:w-8 sm:h-8 border-r-4 border-b-4 border-white rotate-45"></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 bg-mc-stone block-pattern-stone relative border-y-8 border-black">
-        <div class="container mx-auto px-6 relative z-10">
-            <h2 class="font-pixel text-3xl md:text-4xl text-center mb-16 text-white text-shadow">About The Event</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="mc-panel p-8 transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-                    <h3 class="font-pixel text-xl text-gray-800 mb-4 border-b-4 border-gray-400 pb-2">Build, Craft, Innovate</h3>
-                    <p class="text-gray-700 text-2xl leading-relaxed">
+    <section id="about" class="py-12 sm:py-24 bg-mc-stone block-pattern-stone relative border-y-8 border-black">
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="font-pixel text-xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-16 text-white text-shadow">About The Event</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <div class="mc-panel p-5 sm:p-8 transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                    <h3 class="font-pixel text-sm sm:text-xl text-gray-800 mb-3 sm:mb-4 border-b-4 border-gray-400 pb-2">Build, Craft, Innovate</h3>
+                    <p class="text-gray-700 text-lg sm:text-2xl leading-relaxed">
                         Just like in Minecraft, the only limit is your imagination. Gather your resources (APIs, frameworks, logic), craft your tools, and build something extraordinary in this 24-hour coding marathon.
                     </p>
-                    <p class="text-gray-700 text-2xl mt-4 leading-relaxed">
+                    <p class="text-gray-700 text-lg sm:text-2xl mt-3 sm:mt-4 leading-relaxed">
                         Whether you are a Redstone engineer building complex backend logic, or a builder focused on stunning frontend aesthetics, there is a place for you here.
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-2 gap-3 sm:gap-4">
                     <div class="mc-block dirt animate-float" style="animation-delay: 0s;"></div>
                     <div class="mc-block grass animate-float" style="animation-delay: 1s;"></div>
                     <div class="mc-block stone animate-float" style="animation-delay: 0.5s;"></div>
@@ -140,22 +158,22 @@
     </section>
 
     <!-- Timeline Section -->
-    <section id="timeline" class="py-24 bg-mc-wood block-pattern-wood border-b-8 border-black">
-        <div class="container mx-auto px-6">
-            <h2 class="font-pixel text-3xl md:text-4xl text-center mb-16 text-white text-shadow">Crafting Timeline</h2>
+    <section id="timeline" class="py-12 sm:py-24 bg-mc-wood block-pattern-wood border-b-8 border-black">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="font-pixel text-xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-16 text-white text-shadow">Crafting Timeline</h2>
             
-            <div class="max-w-4xl mx-auto bg-mc-panel p-4 md:p-8 rounded-none border-8 border-gray-300 shadow-[inset_-8px_-8px_0px_0px_rgba(0,0,0,0.2)]">
-                <div class="flex justify-between items-center mb-6 border-b-4 border-gray-400 pb-4">
-                    <h3 class="font-pixel text-gray-700">Recipe: <span class="text-black">Hackathon</span></h3>
-                    <div class="px-3 py-1 bg-gray-300 text-gray-800 font-pixel text-xs border-2 border-white border-b-gray-500 border-r-gray-500">24H</div>
+            <div class="max-w-4xl mx-auto bg-mc-panel p-3 sm:p-4 md:p-8 rounded-none border-4 sm:border-8 border-gray-300 shadow-[inset_-8px_-8px_0px_0px_rgba(0,0,0,0.2)]">
+                <div class="flex justify-between items-center mb-4 sm:mb-6 border-b-4 border-gray-400 pb-3 sm:pb-4">
+                    <h3 class="font-pixel text-[10px] sm:text-sm text-gray-700">Recipe: <span class="text-black">Hackathon</span></h3>
+                    <div class="px-2 sm:px-3 py-1 bg-gray-300 text-gray-800 font-pixel text-[10px] sm:text-xs border-2 border-white border-b-gray-500 border-r-gray-500">24H</div>
                 </div>
                 
-                <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+                <!-- Desktop: Crafting Grid Layout -->
+                <div class="hidden sm:flex flex-col md:flex-row gap-8 items-center justify-center">
                     <!-- 3x3 Grid -->
                     <div class="grid grid-cols-3 gap-2 bg-gray-400 p-2 border-4 border-gray-500 border-t-gray-300 border-l-gray-300">
                         <div class="w-16 h-16 md:w-20 md:h-20 bg-gray-300 border-4 border-gray-500 border-t-gray-200 border-l-gray-200 hover:bg-gray-200 transition-colors cursor-pointer group relative">
                             <div class="absolute inset-0 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">👋</div>
-                            <!-- Tooltip -->
                             <div class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black text-white text-lg px-2 py-1 hidden group-hover:block whitespace-nowrap z-10 border-2 border-white">Opening (10 AM)</div>
                         </div>
                         <div class="w-16 h-16 md:w-20 md:h-20 bg-gray-300 border-4 border-gray-500 border-t-gray-200 border-l-gray-200 hover:bg-gray-200 transition-colors cursor-pointer group relative">
@@ -195,149 +213,185 @@
                         <div class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-black text-white text-lg px-2 py-1 hidden group-hover:block whitespace-nowrap z-10 border-2 border-white">Epic Project!</div>
                     </div>
                 </div>
+
+                <!-- Mobile: Timeline List -->
+                <div class="flex sm:hidden flex-col gap-3">
+                    <div class="flex items-center gap-3 bg-gray-200 border-2 border-gray-400 p-3">
+                        <span class="text-2xl">👋</span>
+                        <div class="font-pixel-body text-lg text-gray-800 font-bold">10:00 AM — Opening Ceremony</div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-gray-200 border-2 border-gray-400 p-3">
+                        <span class="text-2xl">💻</span>
+                        <div class="font-pixel-body text-lg text-gray-800 font-bold">11:00 AM — Hacking Begins</div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-gray-200 border-2 border-gray-400 p-3">
+                        <span class="text-2xl">🍕</span>
+                        <div class="font-pixel-body text-lg text-gray-800 font-bold">12:00 AM — Midnight Pizza</div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-gray-200 border-2 border-gray-400 p-3">
+                        <span class="text-2xl">☕</span>
+                        <div class="font-pixel-body text-lg text-gray-800 font-bold">8:00 AM — Morning Coffee</div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-gray-200 border-2 border-gray-400 p-3">
+                        <span class="text-2xl">🛑</span>
+                        <div class="font-pixel-body text-lg text-gray-800 font-bold">11:00 AM — Hacking Ends</div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-gray-200 border-2 border-gray-400 p-3">
+                        <span class="text-2xl">🎤</span>
+                        <div class="font-pixel-body text-lg text-gray-800 font-bold">1:00 PM — Pitches</div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-gray-200 border-2 border-gray-400 p-3">
+                        <span class="text-2xl">🏆</span>
+                        <div class="font-pixel-body text-lg text-gray-800 font-bold">4:00 PM — Awards Ceremony</div>
+                    </div>
+                    <div class="flex items-center justify-center gap-3 bg-gray-300 border-4 border-gray-500 p-4 mt-2">
+                        <span class="text-3xl animate-pulse">💎</span>
+                        <div class="font-pixel text-xs text-gray-800">Epic Project!</div>
+                    </div>
+                </div>
                 
-                <p class="text-center font-pixel-body text-xl text-gray-600 mt-8">Hover over the ingredients to view the schedule.</p>
+                <p class="text-center font-pixel-body text-base sm:text-xl text-gray-600 mt-4 sm:mt-8"><span class="hidden sm:inline">Hover over the ingredients to view the schedule.</span><span class="sm:hidden">Tap each step to learn more.</span></p>
             </div>
         </div>
     </section>
 
     <!-- Rules / Eligibility (Scrollable Block Cards) -->
-    <section id="rules" class="py-24 bg-mc-stone block-pattern-stone border-b-8 border-black overflow-hidden relative">
-        <div class="container mx-auto px-6">
-            <h2 class="font-pixel text-3xl md:text-4xl text-center mb-16 text-white text-shadow">Rules & Eligibility</h2>
+    <section id="rules" class="py-12 sm:py-24 bg-mc-stone block-pattern-stone border-b-8 border-black overflow-hidden relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="font-pixel text-xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-16 text-white text-shadow">Rules & Eligibility</h2>
             
-            <div class="flex overflow-x-auto pb-8 gap-8 hide-scrollbar scroll-pl-6" id="rules-container">
+            <div class="flex overflow-x-auto pb-6 sm:pb-8 gap-4 sm:gap-8 hide-scrollbar scroll-pl-4 sm:scroll-pl-6 snap-x snap-mandatory" id="rules-container">
                 <!-- Card 1 -->
-                <div class="mc-panel min-w-[300px] md:min-w-[400px] p-6 shrink-0">
-                    <div class="flex items-center gap-4 border-b-4 border-gray-400 pb-4 mb-4">
-                        <div class="text-4xl">👥</div>
-                        <h3 class="font-pixel text-lg text-gray-800">Team Size</h3>
+                <div class="mc-panel min-w-[260px] sm:min-w-[300px] md:min-w-[400px] p-4 sm:p-6 shrink-0 snap-start">
+                    <div class="flex items-center gap-3 sm:gap-4 border-b-4 border-gray-400 pb-3 sm:pb-4 mb-3 sm:mb-4">
+                        <div class="text-3xl sm:text-4xl">👥</div>
+                        <h3 class="font-pixel text-sm sm:text-lg text-gray-800">Team Size</h3>
                     </div>
-                    <p class="text-gray-700 text-2xl">Teams can consist of 1 to 4 members. You can go solo or party up to face the Ender Dragon (aka the deadline) together!</p>
+                    <p class="text-gray-700 text-lg sm:text-2xl">Teams can consist of 1 to 4 members. You can go solo or party up to face the Ender Dragon (aka the deadline) together!</p>
                 </div>
                 
                 <!-- Card 2 -->
-                <div class="mc-panel min-w-[300px] md:min-w-[400px] p-6 shrink-0">
-                    <div class="flex items-center gap-4 border-b-4 border-gray-400 pb-4 mb-4">
-                        <div class="text-4xl">🎓</div>
-                        <h3 class="font-pixel text-lg text-gray-800">Eligibility</h3>
+                <div class="mc-panel min-w-[260px] sm:min-w-[300px] md:min-w-[400px] p-4 sm:p-6 shrink-0 snap-start">
+                    <div class="flex items-center gap-3 sm:gap-4 border-b-4 border-gray-400 pb-3 sm:pb-4 mb-3 sm:mb-4">
+                        <div class="text-3xl sm:text-4xl">🎓</div>
+                        <h3 class="font-pixel text-sm sm:text-lg text-gray-800">Eligibility</h3>
                     </div>
-                    <p class="text-gray-700 text-2xl">Open to all students, professionals, and coding enthusiasts. If you can type code, you're welcome here!</p>
+                    <p class="text-gray-700 text-lg sm:text-2xl">Open to all students, professionals, and coding enthusiasts. If you can type code, you're welcome here!</p>
                 </div>
                 
                 <!-- Card 3 -->
-                <div class="mc-panel min-w-[300px] md:min-w-[400px] p-6 shrink-0">
-                    <div class="flex items-center gap-4 border-b-4 border-gray-400 pb-4 mb-4">
-                        <div class="text-4xl">⏱️</div>
-                        <h3 class="font-pixel text-lg text-gray-800">Fresh Code</h3>
+                <div class="mc-panel min-w-[260px] sm:min-w-[300px] md:min-w-[400px] p-4 sm:p-6 shrink-0 snap-start">
+                    <div class="flex items-center gap-3 sm:gap-4 border-b-4 border-gray-400 pb-3 sm:pb-4 mb-3 sm:mb-4">
+                        <div class="text-3xl sm:text-4xl">⏱️</div>
+                        <h3 class="font-pixel text-sm sm:text-lg text-gray-800">Fresh Code</h3>
                     </div>
-                    <p class="text-gray-700 text-2xl">All projects must be started from scratch during the hackathon. No pre-existing code allowed (except boilerplate and open-source libraries).</p>
+                    <p class="text-gray-700 text-lg sm:text-2xl">All projects must be started from scratch during the hackathon. No pre-existing code allowed (except boilerplate and open-source libraries).</p>
                 </div>
                 
                 <!-- Card 4 -->
-                <div class="mc-panel min-w-[300px] md:min-w-[400px] p-6 shrink-0">
-                    <div class="flex items-center gap-4 border-b-4 border-gray-400 pb-4 mb-4">
-                        <div class="text-4xl">⚖️</div>
-                        <h3 class="font-pixel text-lg text-gray-800">Code of Conduct</h3>
+                <div class="mc-panel min-w-[260px] sm:min-w-[300px] md:min-w-[400px] p-4 sm:p-6 shrink-0 snap-start">
+                    <div class="flex items-center gap-3 sm:gap-4 border-b-4 border-gray-400 pb-3 sm:pb-4 mb-3 sm:mb-4">
+                        <div class="text-3xl sm:text-4xl">⚖️</div>
+                        <h3 class="font-pixel text-sm sm:text-lg text-gray-800">Code of Conduct</h3>
                     </div>
-                    <p class="text-gray-700 text-2xl">Be respectful, collaborate effectively, and don't grief other teams' workspaces. Play fair!</p>
+                    <p class="text-gray-700 text-lg sm:text-2xl">Be respectful, collaborate effectively, and don't grief other teams' workspaces. Play fair!</p>
                 </div>
             </div>
             
-            <div class="text-center mt-4">
-                <span class="text-gray-300 font-pixel text-xs animate-pulse">⟵ Scroll horizontally ⟶</span>
+            <div class="text-center mt-3 sm:mt-4">
+                <span class="text-gray-300 font-pixel text-[10px] sm:text-xs animate-pulse">⟵ Swipe to explore ⟶</span>
             </div>
         </div>
     </section>
 
     <!-- Sponsors & Judges Section -->
-    <section id="sponsors" class="py-24 bg-mc-dirt border-t-8 border-mc-grass relative z-10">
-        <div class="container mx-auto px-6">
-            <h2 class="font-pixel text-3xl md:text-4xl text-center mb-16 text-white text-shadow">Our Sponsors</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
+    <section id="sponsors" class="py-12 sm:py-24 bg-mc-dirt border-t-8 border-mc-grass relative z-10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="font-pixel text-xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-16 text-white text-shadow">Our Sponsors</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mb-12 sm:mb-24">
                 <!-- Sponsor Blocks -->
-                <div class="mc-panel sponsor-panel aspect-square flex items-center justify-center p-4 hover:-translate-y-2 transition-transform cursor-pointer">
-                    <h3 class="font-pixel text-gray-800 text-center">TechCorp</h3>
+                <div class="mc-panel sponsor-panel aspect-square flex items-center justify-center p-3 sm:p-4 hover:-translate-y-2 active:scale-95 transition-transform cursor-pointer">
+                    <h3 class="font-pixel text-[10px] sm:text-sm text-gray-800 text-center">TechCorp</h3>
                 </div>
-                <div class="mc-panel sponsor-panel aspect-square flex items-center justify-center p-4 hover:-translate-y-2 transition-transform cursor-pointer">
-                    <h3 class="font-pixel text-gray-800 text-center text-sm">Voxel Industries</h3>
+                <div class="mc-panel sponsor-panel aspect-square flex items-center justify-center p-3 sm:p-4 hover:-translate-y-2 active:scale-95 transition-transform cursor-pointer">
+                    <h3 class="font-pixel text-[10px] sm:text-sm text-gray-800 text-center">Voxel Industries</h3>
                 </div>
-                <div class="mc-panel sponsor-panel aspect-square flex items-center justify-center p-4 hover:-translate-y-2 transition-transform cursor-pointer">
-                    <h3 class="font-pixel text-gray-800 text-center">CloudBlocks</h3>
+                <div class="mc-panel sponsor-panel aspect-square flex items-center justify-center p-3 sm:p-4 hover:-translate-y-2 active:scale-95 transition-transform cursor-pointer">
+                    <h3 class="font-pixel text-[10px] sm:text-sm text-gray-800 text-center">CloudBlocks</h3>
                 </div>
-                <div class="mc-panel sponsor-panel aspect-square flex items-center justify-center p-4 hover:-translate-y-2 transition-transform cursor-pointer">
-                    <h3 class="font-pixel text-gray-800 text-center">Redstone API</h3>
+                <div class="mc-panel sponsor-panel aspect-square flex items-center justify-center p-3 sm:p-4 hover:-translate-y-2 active:scale-95 transition-transform cursor-pointer">
+                    <h3 class="font-pixel text-[10px] sm:text-sm text-gray-800 text-center">Redstone API</h3>
                 </div>
             </div>
 
-            <h2 class="font-pixel text-3xl md:text-4xl text-center mb-16 text-white text-shadow">Judges & Mentors</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+            <h2 class="font-pixel text-xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-16 text-white text-shadow">Judges & Mentors</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
                 <!-- Judge Cards -->
-                <div class="mc-panel flex flex-col items-center p-6 text-center hover:scale-105 transition-transform">
-                    <div class="w-24 h-24 bg-mc-stone mb-4 border-4 border-black avatar-pixel-1 shadow-inner"></div>
-                    <h3 class="font-pixel text-sm text-black mb-2">Steve Coder</h3>
-                    <p class="text-gray-700 text-xl">Lead Developer, Mojang</p>
+                <div class="mc-panel flex flex-col items-center p-4 sm:p-6 text-center hover:scale-105 active:scale-95 transition-transform">
+                    <div class="w-16 h-16 sm:w-24 sm:h-24 bg-mc-stone mb-3 sm:mb-4 border-4 border-black avatar-pixel-1 shadow-inner"></div>
+                    <h3 class="font-pixel text-xs sm:text-sm text-black mb-1 sm:mb-2">Steve Coder</h3>
+                    <p class="text-gray-700 text-lg sm:text-xl">Lead Developer, Mojang</p>
                 </div>
-                <div class="mc-panel flex flex-col items-center p-6 text-center hover:scale-105 transition-transform">
-                    <div class="w-24 h-24 bg-mc-grass mb-4 border-4 border-black avatar-pixel-2 shadow-inner"></div>
-                    <h3 class="font-pixel text-sm text-black mb-2">Alex Builder</h3>
-                    <p class="text-gray-700 text-xl">UX Architect</p>
+                <div class="mc-panel flex flex-col items-center p-4 sm:p-6 text-center hover:scale-105 active:scale-95 transition-transform">
+                    <div class="w-16 h-16 sm:w-24 sm:h-24 bg-mc-grass mb-3 sm:mb-4 border-4 border-black avatar-pixel-2 shadow-inner"></div>
+                    <h3 class="font-pixel text-xs sm:text-sm text-black mb-1 sm:mb-2">Alex Builder</h3>
+                    <p class="text-gray-700 text-lg sm:text-xl">UX Architect</p>
                 </div>
-                <div class="mc-panel flex flex-col items-center p-6 text-center hover:scale-105 transition-transform">
-                    <div class="w-24 h-24 bg-purple-600 mb-4 border-4 border-black avatar-pixel-3 shadow-inner"></div>
-                    <h3 class="font-pixel text-sm text-black mb-2">Ender Dev</h3>
-                    <p class="text-gray-700 text-xl">Backend Engineer</p>
+                <div class="mc-panel flex flex-col items-center p-4 sm:p-6 text-center hover:scale-105 active:scale-95 transition-transform">
+                    <div class="w-16 h-16 sm:w-24 sm:h-24 bg-purple-600 mb-3 sm:mb-4 border-4 border-black avatar-pixel-3 shadow-inner"></div>
+                    <h3 class="font-pixel text-xs sm:text-sm text-black mb-1 sm:mb-2">Ender Dev</h3>
+                    <p class="text-gray-700 text-lg sm:text-xl">Backend Engineer</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-24 bg-mc-sky relative border-t-8 border-black">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="font-pixel text-3xl md:text-4xl text-center mb-16 text-white text-shadow">Frequently Asked Questions</h2>
+    <section id="faq" class="py-12 sm:py-24 bg-mc-sky relative border-t-8 border-black">
+        <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+            <h2 class="font-pixel text-xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-16 text-white text-shadow">Frequently Asked Questions</h2>
             
-            <div class="space-y-4">
+            <div class="space-y-3 sm:space-y-4">
                 <!-- FAQ Item 1 -->
                 <div class="mc-panel">
-                    <button class="w-full text-left p-4 font-pixel text-sm text-gray-900 border-b-4 border-gray-400 focus:outline-none flex justify-between items-center faq-btn">
+                    <button class="w-full text-left p-3 sm:p-4 font-pixel text-[10px] sm:text-sm text-gray-900 border-b-4 border-gray-400 focus:outline-none flex justify-between items-center faq-btn min-h-[48px]">
                         <span>Is it free to register?</span>
-                        <span class="text-xl faq-icon">+</span>
+                        <span class="text-lg sm:text-xl faq-icon ml-2">+</span>
                     </button>
-                    <div class="faq-content hidden p-4 text-gray-700 text-2xl bg-gray-200">
+                    <div class="faq-content hidden p-3 sm:p-4 text-gray-700 text-lg sm:text-2xl bg-gray-200">
                         Absolutely! The hackathon is 100% free for all participants. Food, swag, and blocks are on us.
                     </div>
                 </div>
 
                 <!-- FAQ Item 2 -->
                 <div class="mc-panel">
-                    <button class="w-full text-left p-4 font-pixel text-sm text-gray-900 border-b-4 border-gray-400 focus:outline-none flex justify-between items-center faq-btn">
+                    <button class="w-full text-left p-3 sm:p-4 font-pixel text-[10px] sm:text-sm text-gray-900 border-b-4 border-gray-400 focus:outline-none flex justify-between items-center faq-btn min-h-[48px]">
                         <span>Do I need a team?</span>
-                        <span class="text-xl faq-icon">+</span>
+                        <span class="text-lg sm:text-xl faq-icon ml-2">+</span>
                     </button>
-                    <div class="faq-content hidden p-4 text-gray-700 text-2xl bg-gray-200">
+                    <div class="faq-content hidden p-3 sm:p-4 text-gray-700 text-lg sm:text-2xl bg-gray-200">
                         You can participate solo or in a team of up to 4 members. We'll also have team-building sessions before the event if you're looking for party members!
                     </div>
                 </div>
 
                 <!-- FAQ Item 3 -->
                 <div class="mc-panel">
-                    <button class="w-full text-left p-4 font-pixel text-sm text-gray-900 border-b-4 border-gray-400 focus:outline-none flex justify-between items-center faq-btn">
+                    <button class="w-full text-left p-3 sm:p-4 font-pixel text-[10px] sm:text-sm text-gray-900 border-b-4 border-gray-400 focus:outline-none flex justify-between items-center faq-btn min-h-[48px]">
                         <span>What should I build?</span>
-                        <span class="text-xl faq-icon">+</span>
+                        <span class="text-lg sm:text-xl faq-icon ml-2">+</span>
                     </button>
-                    <div class="faq-content hidden p-4 text-gray-700 text-2xl bg-gray-200">
+                    <div class="faq-content hidden p-3 sm:p-4 text-gray-700 text-lg sm:text-2xl bg-gray-200">
                         Anything! Web apps, mobile apps, hardware hacks, or even Minecraft mods. The only limit is your creativity.
                     </div>
                 </div>
                 
                 <!-- FAQ Item 4 -->
                 <div class="mc-panel">
-                    <button class="w-full text-left p-4 font-pixel text-sm text-gray-900 border-b-4 border-gray-400 focus:outline-none flex justify-between items-center faq-btn">
+                    <button class="w-full text-left p-3 sm:p-4 font-pixel text-[10px] sm:text-sm text-gray-900 border-b-4 border-gray-400 focus:outline-none flex justify-between items-center faq-btn min-h-[48px]">
                         <span>Will there be food?</span>
-                        <span class="text-xl faq-icon">+</span>
+                        <span class="text-lg sm:text-xl faq-icon ml-2">+</span>
                     </button>
-                    <div class="faq-content hidden p-4 text-gray-700 text-2xl bg-gray-200">
+                    <div class="faq-content hidden p-3 sm:p-4 text-gray-700 text-lg sm:text-2xl bg-gray-200">
                         Yes! Lots of pizza, energy drinks, and snacks. We'll make sure your hunger bar never depletes.
                     </div>
                 </div>
@@ -346,19 +400,19 @@
     </section>
 
     <!-- Footer CTA -->
-    <footer id="register" class="py-32 bg-black border-t-8 border-gray-600 text-center relative overflow-hidden">
+    <footer id="register" class="py-16 sm:py-32 bg-black border-t-8 border-gray-600 text-center relative overflow-hidden">
         <!-- Pixel Stars -->
         <div class="absolute inset-0 z-0 opacity-50 block-pattern-stars"></div>
         
-        <div class="container mx-auto px-6 relative z-10">
-            <h2 class="font-pixel text-4xl md:text-5xl text-white mb-8 text-shadow-lg">Ready to Craft?</h2>
-            <p class="font-pixel-body text-3xl text-gray-300 mb-12">Grab your pickaxe and let's go.</p>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <h2 class="font-pixel text-2xl sm:text-4xl md:text-5xl text-white mb-4 sm:mb-8 text-shadow-lg">Ready to Craft?</h2>
+            <p class="font-pixel-body text-xl sm:text-3xl text-gray-300 mb-6 sm:mb-12">Grab your pickaxe and let's go.</p>
             
-            <button class="mc-btn-play font-pixel text-2xl md:text-3xl px-12 py-6 bg-mc-grass text-white inline-block hover:scale-105 transition-transform shadow-[0_0_30px_rgba(91,156,48,0.6)]">
+            <button class="mc-btn-play font-pixel text-base sm:text-2xl md:text-3xl px-8 sm:px-12 py-4 sm:py-6 bg-mc-grass text-white inline-block hover:scale-105 active:scale-95 transition-transform shadow-[0_0_30px_rgba(91,156,48,0.6)]">
                 [ REGISTER NOW ]
             </button>
             
-            <p class="font-pixel-body text-xl text-gray-500 mt-16">
+            <p class="font-pixel-body text-base sm:text-xl text-gray-500 mt-8 sm:mt-16">
                 © 2026 Hackcraft. Not officially affiliated with Mojang or Microsoft.
             </p>
         </div>

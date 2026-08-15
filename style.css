@@ -288,3 +288,80 @@ body:active {
 .animate-mine {
     animation: mine 0.3s infinite;
 }
+
+/* ===== Mobile Navigation ===== */
+
+/* Hamburger open state */
+#hamburger-btn.open .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+#hamburger-btn.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+#hamburger-btn.open .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile nav visible state */
+#mobile-nav.open {
+    transform: translateX(0);
+}
+
+/* Mobile nav link entrance animation */
+.mobile-nav-link {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#mobile-nav.open .mobile-nav-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+#mobile-nav.open .mobile-nav-link:nth-child(2) { transition-delay: 0.05s; }
+#mobile-nav.open .mobile-nav-link:nth-child(3) { transition-delay: 0.10s; }
+#mobile-nav.open .mobile-nav-link:nth-child(4) { transition-delay: 0.15s; }
+#mobile-nav.open .mobile-nav-link:nth-child(5) { transition-delay: 0.20s; }
+#mobile-nav.open .mobile-nav-link:nth-child(6) { transition-delay: 0.25s; }
+
+/* ===== Touch-friendly active states ===== */
+@media (hover: none) and (pointer: coarse) {
+    .mc-btn:active,
+    .mc-btn-play:active,
+    .mc-panel:active,
+    .faq-btn:active {
+        opacity: 0.85;
+    }
+
+    /* Disable parallax cloud effect on touch devices */
+    .cloud {
+        animation-play-state: running !important;
+        transform: none !important;
+    }
+}
+
+/* ===== Reduce motion for small screens ===== */
+@media (max-width: 640px) {
+    .floating-block {
+        animation: floating-hero 8s ease-in-out infinite;
+    }
+
+    /* Smaller mc-logo text stroke on mobile */
+    .mc-logo {
+        -webkit-text-stroke: 1px #000;
+        text-shadow:
+            2px 2px 0 #555555,
+            -2px 2px 0 #555555,
+            2px -2px 0 #555555,
+            -2px -2px 0 #555555,
+            0px 3px 0 #000,
+            1px 3px 0 #000,
+            2px 3px 0 #000,
+            -1px 3px 0 #000,
+            -2px 3px 0 #000;
+    }
+}
+
+/* ===== Ensure body doesn't scroll when mobile nav is open ===== */
+body.nav-open {
+    overflow: hidden;
+}

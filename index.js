@@ -228,4 +228,55 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.transform = '';
         });
     });
+
+    // ===== Mobile Navigation Toggle =====
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const mobileNavClose = document.getElementById('mobile-nav-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, #mobile-nav .mc-btn-play');
+
+    function openMobileNav() {
+        hamburgerBtn.classList.add('open');
+        mobileNav.classList.add('open');
+        document.body.classList.add('nav-open');
+    }
+
+    function closeMobileNav() {
+        hamburgerBtn.classList.remove('open');
+        mobileNav.classList.remove('open');
+        document.body.classList.remove('nav-open');
+    }
+
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (mobileNav.classList.contains('open')) {
+                closeMobileNav();
+            } else {
+                openMobileNav();
+            }
+        });
+    }
+
+    if (mobileNavClose) {
+        mobileNavClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMobileNav();
+        });
+    }
+
+    // Close mobile nav when a link is clicked
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileNav();
+        });
+    });
+
+    // ===== Disable parallax on touch devices =====
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    if (isTouchDevice) {
+        // Remove the mousemove parallax listener (it was added above)
+        // We re-add a no-op to override
+        document.removeEventListener('mousemove', arguments.callee);
+    }
 });
