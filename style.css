@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+/* Base Reset & Variables */
+:root {
+    --mc-highlight: rgba(255, 255, 255, 0.4);
+    --mc-shadow: rgba(0, 0, 0, 0.4);
+    --mc-shadow-dark: rgba(0, 0, 0, 0.6);
+}
+
+body {
+    background-image: linear-gradient(180deg, #78a7ff 0%, #b2d5ff 100%);
+    background-attachment: fixed;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+    background-color: #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #7d7d7d;
+    border: 3px solid #2b2b2b;
+    border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+}
+
+/* Utilities */
+.text-shadow {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow-md {
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);
+}
+
+.text-shadow-lg {
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Minecraft Standard Button */
+.mc-btn {
+    position: relative;
+    border: 3px solid #000;
+    box-shadow: inset -3px -3px 0px 0px var(--mc-shadow), 
+                inset 3px 3px 0px 0px var(--mc-highlight);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.1s;
+    image-rendering: pixelated;
+}
+
+.mc-btn:active {
+    box-shadow: inset -3px -3px 0px 0px var(--mc-highlight), 
+                inset 3px 3px 0px 0px var(--mc-shadow-dark);
+    transform: translateY(2px);
+}
+
+/* Minecraft Large Play Button */
+.mc-btn-play {
+    position: relative;
+    border: 4px solid #000;
+    box-shadow: inset -6px -6px 0px 0px rgba(0,0,0,0.3), 
+                inset 6px 6px 0px 0px rgba(255,255,255,0.4),
+                4px 4px 0px 0px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.mc-btn-play:hover {
+    background-color: #6bcc39;
+    box-shadow: inset -6px -6px 0px 0px rgba(0,0,0,0.3), 
+                inset 6px 6px 0px 0px rgba(255,255,255,0.6),
+                4px 4px 0px 0px rgba(0,0,0,0.5);
+}
+
+.mc-btn-play:active {
+    box-shadow: inset -6px -6px 0px 0px rgba(255,255,255,0.3), 
+                inset 6px 6px 0px 0px rgba(0,0,0,0.5),
+                0px 0px 0px 0px rgba(0,0,0,0.5);
+    transform: translate(4px, 4px);
+}
+
+/* Minecraft Panel (Inventory Style) */
+.mc-panel {
+    background-color: #c6c6c6;
+    border: 4px solid #000;
+    box-shadow: inset -4px -4px 0px 0px #555555, 
+                inset 4px 4px 0px 0px #ffffff;
+    image-rendering: pixelated;
+}
+
+/* Voxel Blocks */
+.mc-block {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 4px solid #000;
+    box-shadow: inset -8px -8px 0px 0px rgba(0,0,0,0.2), 
+                inset 8px 8px 0px 0px rgba(255,255,255,0.2);
+    position: relative;
+}
+
+.mc-block.dirt {
+    background-color: #7c5334;
+}
+
+.mc-block.grass {
+    background-color: #7c5334;
+}
+.mc-block.grass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background-color: #5b9c30;
+    border-bottom: 4px solid #4a8026;
+}
+
+.mc-block.stone {
+    background-color: #7d7d7d;
+}
+
+.mc-block.wood {
+    background-color: #8f6841;
+}
+
+/* Textures */
+.block-pattern {
+    background-image: radial-gradient(#6c4629 15%, transparent 16%),
+                      radial-gradient(#6c4629 15%, transparent 16%);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+}
+
+.block-pattern-stone {
+    background-image: linear-gradient(45deg, #707070 25%, transparent 25%, transparent 75%, #707070 75%, #707070),
+                      linear-gradient(45deg, #707070 25%, transparent 25%, transparent 75%, #707070 75%, #707070);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+
+.block-pattern-wood {
+    background-image: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(0,0,0,0.1) 10px, rgba(0,0,0,0.1) 20px);
+}
+
+.block-pattern-stars {
+    background-image: radial-gradient(white 5%, transparent 6%);
+    background-size: 60px 60px;
+}
+
+/* Avatar Placeholders */
+.avatar-pixel-1 {
+    background: repeating-linear-gradient(
+        45deg,
+        #ffcda2,
+        #ffcda2 10px,
+        #8b5a2b 10px,
+        #8b5a2b 20px
+    );
+}
+
+.avatar-pixel-2 {
+    background: repeating-linear-gradient(
+        -45deg,
+        #ffcda2,
+        #ffcda2 10px,
+        #ff7e27 10px,
+        #ff7e27 20px
+    );
+}
+
+.avatar-pixel-3 {
+    background: repeating-linear-gradient(
+        45deg,
+        #2a2a2a,
+        #2a2a2a 10px,
+        #8a2be2 10px,
+        #8a2be2 20px
+    );
+}
+
+/* Animations */
+.cloud {
+    image-rendering: pixelated;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+.floating-block {
+    animation: floating-hero 6s ease-in-out infinite;
+}
+
+@keyframes floating-hero {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Audio visual feedback on click */
+body:active {
+    cursor: crosshair;
+}
+
+/* Minecraft Text Logo */
+.mc-logo {
+    font-family: 'Press Start 2P', cursive;
+    color: #a0a0a0;
+    -webkit-text-stroke: 2px #000;
+    text-shadow:
+        4px 4px 0 #555555,
+        -4px 4px 0 #555555,
+        4px -4px 0 #555555,
+        -4px -4px 0 #555555,
+        0px 6px 0 #000,
+        2px 6px 0 #000,
+        4px 6px 0 #000,
+        -2px 6px 0 #000,
+        -4px 6px 0 #000;
+}
+
+/* Preloader Animations */
+/* Intro Animation Styles */
+@keyframes fallDown {
+    0% { transform: translateY(-60vh) scale(1.2); opacity: 0; }
+    70% { transform: translateY(10px) scale(1); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.falling-block {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(24px, 5vw, 48px);
+    height: clamp(24px, 5vw, 48px);
+    background-color: #8f6841; /* wood */
+    border: 3px solid #000;
+    box-shadow: inset -3px -3px 0px 0px rgba(0,0,0,0.4), 
+                inset 3px 3px 0px 0px rgba(255,255,255,0.3);
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    font-size: clamp(12px, 2.5vw, 24px);
+    image-rendering: pixelated;
+    opacity: 0;
+    position: relative;
+    margin: 2px;
+}
+
+.falling-block.grass {
+    background-color: #7c5334;
+}
+.falling-block.grass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background-color: #5b9c30;
+    border-bottom: 3px solid #4a8026;
+}
+
+.falling-block span {
+    position: relative;
+    z-index: 1;
+}
+
+.falling-block.dropped {
+    animation: fallDown 0.2s ease-out forwards;
+}
+
+@keyframes mine {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(45deg); }
+    100% { transform: rotate(0deg); }
+}
+.animate-mine {
+    animation: mine 0.3s infinite;
+}
