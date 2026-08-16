@@ -1,31 +1,16 @@
-# ⛏️ Hackcraft 2026
+# React + Vite
 
-Welcome to the **Hackcraft 2026** official landing page repository! 
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-Hackcraft is an immersive, 24-hour hackathon bringing developers, designers, and creators together to build, craft, and innovate—just like in Minecraft! Whether you are a Redstone engineer building complex backend logic, or a builder focused on stunning frontend aesthetics, there's a place for you here.
+Currently, two official plugins are available:
 
-## ✨ Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- **Minecraft-Themed UI:** Features voxel aesthetics, retro pixel typography, and floating block animations.
-- **Immersive Audio Experience:** Built-in ambient interactions with authentic Minecraft UI clicks, portal travel sounds, and the iconic Creeper blast!
-- **Interactive Preloader:** Watch the world generate right before your eyes with an animated logo builder.
-- **Responsive Design:** Fully responsive layout built using Vanilla CSS and TailwindCSS for utility styling.
+## React Compiler
 
-## 🚀 Getting Started
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-To view the landing page locally:
+## Expanding the Oxlint configuration
 
-1. Clone this repository.
-2. Open `index.html` in your favorite web browser.
-3. Click **START GAME** to begin your journey and enable the audio experience.
-
-## 🛠️ Tech Stack
-
-- **HTML5** & **CSS3**
-- **JavaScript**
-- **TailwindCSS** (for utility styling and layout generation)
-
-## ⚖️ License
-
-This project is built for Hackcraft 2026. 
-*(Note: Hackcraft is a community hackathon and is not officially affiliated with Mojang or Microsoft).*
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
