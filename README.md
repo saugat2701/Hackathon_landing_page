@@ -5,8 +5,6 @@
 ![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![GSAP](https://img.shields.io/badge/GSAP-3.15-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 <p align="center">
   <strong>An immersive, interactive, pixel-perfect Minecraft-themed 24-hour hackathon landing page built with modern web technologies.</strong>
