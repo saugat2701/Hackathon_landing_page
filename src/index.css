@@ -88,6 +88,15 @@
   100% { background-position: 200% 0; }
 }
 
+@keyframes floatUp {
+  0% { transform: translate(-50%, 0) scale(0.8); opacity: 1; }
+  100% { transform: translate(-50%, -45px) scale(1.2); opacity: 0; }
+}
+
+.animate-floatUp {
+  animation: floatUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
 /* ===== Base Styles ===== */
 html {
   scroll-behavior: smooth;
