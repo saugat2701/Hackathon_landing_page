@@ -1,16 +1,8 @@
 # 🎮 HACKCRAFT 2026 — Minecraft-Themed Hackathon Landing Page
 
-<div align="center">
 
-![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-
-<p align="center">
   <strong>An immersive, interactive, pixel-perfect Minecraft-themed 24-hour hackathon landing page built with modern web technologies.</strong>
 </p>
-
-[✨ Live Demo](#) • [🚀 Getting Started](#-getting-started) • [🌟 Features](#-features) • [🕹️ Interactive HUD](#️-interactive-hud--gameplay) • [📁 Project Structure](#-project-structure)
 
 </div>
 
@@ -60,57 +52,6 @@
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Framework**: [React 19](https://react.dev/)
-- **Build Tool**: [Vite 8](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + Custom Pixel Art CSS Engine
-- **Animations**: [GSAP (GreenSock)](https://greensock.com/gsap/) with [ScrollTrigger](https://greensock.com/scrolltrigger/)
-- **Linter**: [Oxlint](https://oxc.rs/)
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (version 18+ recommended)
-- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/) or [yarn](https://yarnpkg.com/)
-
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/saugat2701/Hackathon_landing_page.git
-   cd Hackathon_landing_page
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Start the local development server**:
-   ```bash
-   npm run dev
-   ```
-
-4. **Open in browser**:
-   Navigate to `http://localhost:5173` (or the URL shown in your terminal).
-
----
-
-## 📜 Available Scripts
-
-| Command | Description |
-| :--- | :--- |
-| `npm run dev` | Starts Vite local development server with Hot Module Replacement (HMR) |
-| `npm run build` | Compiles and builds production-ready bundle in the `dist` directory |
-| `npm run preview` | Locally preview the production build |
-| `npm run lint` | Runs Oxlint to check code quality and lint errors |
-
----
-
 ## 📁 Project Structure
 
 ```text
@@ -143,34 +84,6 @@ Hackathon_landing_page/
 ├── vite.config.js         # Vite configuration
 └── README.md              # Project documentation
 ```
-
----
-
-## 🎨 Customization
-
-### Changing Event Dates and Details
-- Open [src/components/Hero.jsx](file:///c:/Project1/src/components/Hero.jsx) to update the hackathon name, date, and prize pool.
-- Open [src/components/Timeline.jsx](file:///c:/Project1/src/components/Timeline.jsx) to modify the schedule checkpoints.
-- Open [src/components/QuestGenerator.jsx](file:///c:/Project1/src/components/QuestGenerator.jsx) to add or adjust project tracks.
-
-### Customizing Sounds & Music
-- Open [src/components/Jukebox.jsx](file:///c:/Project1/src/components/Jukebox.jsx) to replace or add background tracks and 8-bit sound effects.
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-
 ---
 
 <div align="center">
